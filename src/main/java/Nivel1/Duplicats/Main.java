@@ -1,6 +1,8 @@
 package Nivel1.Duplicats;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 
 public class Main {
     static void main(String[] args) {
@@ -21,11 +23,28 @@ public class Main {
 
         months.add(7, new Month("August"));
 
+        for (Month m : months) {
+            System.out.println(m);
+        }
 
+        HashSet <Month> uniqueMonths = new HashSet <> (months);
 
+        System.out.println("Size before: " + uniqueMonths.size());
 
+        boolean inserted = uniqueMonths.add(new Month("January"));
 
+        System.out.println("Duplicate add returned:" + inserted);
 
+        System.out.println("Size after: " + uniqueMonths.size());
 
+        for (Month m : uniqueMonths){
+            System.out.println(m);
+        }
+
+        Iterator<Month> it = uniqueMonths.iterator();
+             while (it.hasNext()) {
+            Month m = it.next();
+            System.out.println(m);
+        }
     }
 }
