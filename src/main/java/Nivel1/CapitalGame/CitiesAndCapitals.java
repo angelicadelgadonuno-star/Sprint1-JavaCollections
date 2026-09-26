@@ -21,7 +21,6 @@ public class CitiesAndCapitals {
                 String city = parts[1].trim();
                 capitalCities.put(country,city);
             }
-
         }
     }
 
@@ -55,11 +54,16 @@ public class CitiesAndCapitals {
             }
         }
         System.out.println(this.name + ", your score is: " + score + "/" + countries.size());
-
+        saveScore(score);
+        System.out.println("Score saved to classificacio.txt");
     }
 
-
-    }
+    public void saveScore(int score) {
+        DocsManagement docs = new DocsManagement();
+        String line = this.name + "," + score;
+        docs.writeFile("classificacio.txt", line);
+        }
+}
 
 
 

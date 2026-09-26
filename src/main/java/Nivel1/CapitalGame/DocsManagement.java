@@ -21,8 +21,6 @@ public class DocsManagement {
               return lines;
           }
 
-
-
       public void writeFile (String fileName, String text) {
     try (FileWriter writer = new FileWriter(fileName,true)) {
         writer.write(text + "\n");
@@ -30,7 +28,6 @@ public class DocsManagement {
         System.out.println("Unable to write file: " + fileName);
     }
       }
-
 }
 
 
