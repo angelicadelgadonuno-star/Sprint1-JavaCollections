@@ -1,8 +1,6 @@
 package Nivel1.CapitalGame;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +20,18 @@ public class DocsManagement {
           }
               return lines;
           }
+
+
+
+      public void writeFile (String fileName, String text) {
+    try (FileWriter writer = new FileWriter(fileName,true)) {
+        writer.write(text + "\n");
+    } catch (IOException e) {
+        System.out.println("Unable to write file: " + fileName);
+    }
       }
 
+}
 
 
 
