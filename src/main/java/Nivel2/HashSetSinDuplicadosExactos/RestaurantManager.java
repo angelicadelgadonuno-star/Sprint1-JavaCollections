@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class RestaurantManager {
 
-    private Set<Restaurant> restaurants = new HashSet<>();
+private Set<Restaurant> restaurants = new HashSet<>();
 
 public void add(Restaurant r) {
     restaurants.add(r);
