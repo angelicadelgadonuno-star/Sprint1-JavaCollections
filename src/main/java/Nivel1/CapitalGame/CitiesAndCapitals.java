@@ -11,20 +11,20 @@ public class CitiesAndCapitals {
     private HashMap<String, String> capitalCities = new HashMap<>();
     private String name;
 
-    public void readCities () {
+    public void readCities() {
         DocsManagement docs = new DocsManagement();
         List<String> lines = docs.readFile("countries.txt");
-        for (String line : lines){
+        for (String line : lines) {
             String[] parts = line.split("\\s+");
-            if(parts.length == 2){
+            if (parts.length == 2) {
                 String country = parts[0].trim();
                 String city = parts[1].trim();
-                capitalCities.put(country,city);
+                capitalCities.put(country, city);
             }
         }
     }
 
-    public void askName (Scanner sc) {
+    public void askName(Scanner sc) {
         System.out.print("What's your name? ");
         this.name = sc.nextLine().trim();
     }
@@ -62,7 +62,7 @@ public class CitiesAndCapitals {
         DocsManagement docs = new DocsManagement();
         String line = this.name + "," + score;
         docs.writeFile("classificacio.txt", line);
-        }
+    }
 }
 
 

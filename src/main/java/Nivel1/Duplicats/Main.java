@@ -27,7 +27,7 @@ public class Main {
             System.out.println(m);
         }
 
-        HashSet <Month> uniqueMonths = new HashSet <> (months);
+        HashSet<Month> uniqueMonths = new HashSet<>(months);
 
         System.out.println("Size before: " + uniqueMonths.size());
 
@@ -37,12 +37,12 @@ public class Main {
 
         System.out.println("Size after: " + uniqueMonths.size());
 
-        for (Month m : uniqueMonths){
+        for (Month m : uniqueMonths) {
             System.out.println(m);
         }
 
         Iterator<Month> it = uniqueMonths.iterator();
-             while (it.hasNext()) {
+        while (it.hasNext()) {
             Month m = it.next();
             System.out.println(m);
         }

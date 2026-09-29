@@ -6,19 +6,19 @@ import java.util.ListIterator;
 
 public class ListReverser {
 
-    private List <Integer> numbers;
+    private List<Integer> numbers;
 
     public ListReverser(List<Integer> numbers) {
         this.numbers = numbers;
     }
 
-    public List <Integer> listBackWards(){
+    public List<Integer> listBackWards() {
 
-        List <Integer> numbers2 = new ArrayList<>();
+        List<Integer> numbers2 = new ArrayList<>();
 
-        ListIterator <Integer> it = numbers.listIterator(numbers.size());
+        ListIterator<Integer> it = numbers.listIterator(numbers.size());
 
-        while (it.hasPrevious()){
+        while (it.hasPrevious()) {
             numbers2.add(it.previous());
         }
         return numbers2;
