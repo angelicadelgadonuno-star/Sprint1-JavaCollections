@@ -10,8 +10,12 @@ public class RestaurantManager {
 
     private Set<Restaurant> restaurants = new HashSet<>();
 
-    public void add(Restaurant r) {
-        restaurants.add(r);
+    public void addNewRestaurant(Restaurant r) {
+        if (this.restaurants.contains(r)) {
+            throw new IllegalArgumentException("ERROR: The Restaurant you tried to add is already in our system");
+        } else {
+        this.restaurants.add(r);
+        }
     }
 
     public int count() {

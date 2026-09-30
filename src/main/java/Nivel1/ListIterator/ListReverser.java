@@ -13,11 +13,8 @@ public class ListReverser {
     }
 
     public List<Integer> listBackWards() {
-
         List<Integer> numbers2 = new ArrayList<>();
-
         ListIterator<Integer> it = numbers.listIterator(numbers.size());
-
         while (it.hasPrevious()) {
             numbers2.add(it.previous());
         }

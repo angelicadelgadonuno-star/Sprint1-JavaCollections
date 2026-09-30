@@ -11,11 +11,17 @@ public class Main {
         Restaurant r4 = new Restaurant("Tlaxcal", 9);
         Restaurant r5 = new Restaurant("El Changarrito", 8);
 
-        manager.add(r1);
-        manager.add(r2);
-        manager.add(r3);
-        manager.add(r4);
-        manager.add(r5);
+        manager.addNewRestaurant(r1);
+        manager.addNewRestaurant(r2);
+        manager.addNewRestaurant(r3);
+        manager.addNewRestaurant(r4);
+
+        try {
+            manager.addNewRestaurant(r5);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
 
         System.out.println("Total: " + manager.count());
         System.out.println(manager.list());

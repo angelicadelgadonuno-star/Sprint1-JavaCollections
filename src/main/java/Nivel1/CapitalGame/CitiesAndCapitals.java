@@ -15,18 +15,18 @@ public class CitiesAndCapitals {
         DocsManagement docs = new DocsManagement();
         List<String> lines = docs.readFile("countries.txt");
         for (String line : lines) {
-            String[] parts = line.split("\\s+");
+            String[] parts = line.split(" ");
             if (parts.length == 2) {
-                String country = parts[0].trim();
-                String city = parts[1].trim();
+                String country = parts[0];
+                String city = parts[1];
                 capitalCities.put(country, city);
             }
         }
     }
 
     public void askName(Scanner sc) {
-        System.out.print("What's your name? ");
-        this.name = sc.nextLine().trim();
+        System.out.print("What's your name?");
+        this.name = sc.nextLine();
     }
 
     public List<String> prepareGame() {
@@ -60,8 +60,8 @@ public class CitiesAndCapitals {
 
     public void saveScore(int score) {
         DocsManagement docs = new DocsManagement();
-        String line = this.name + "," + score;
-        docs.writeFile("classificacio.txt", line);
+        String textLine = this.name + " your score is: " + score;
+        docs.writeFile("classificacio.txt", textLine);
     }
 }
 

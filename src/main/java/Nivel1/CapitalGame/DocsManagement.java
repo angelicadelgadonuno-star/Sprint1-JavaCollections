@@ -9,8 +9,7 @@ public class DocsManagement {
     public List<String> readFile(String fileName) {
         List<String> lines = new ArrayList<>();
 
-        try (
-                BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 lines.add(line);

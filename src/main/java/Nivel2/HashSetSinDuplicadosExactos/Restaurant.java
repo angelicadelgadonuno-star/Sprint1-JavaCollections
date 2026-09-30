@@ -1,6 +1,5 @@
 package Nivel2.HashSetSinDuplicadosExactos;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 public class Restaurant implements Comparable<Restaurant> {

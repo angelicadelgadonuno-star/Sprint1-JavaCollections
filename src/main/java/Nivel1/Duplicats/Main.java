@@ -1,50 +1,23 @@
 package Nivel1.Duplicats;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 
 public class Main {
     static void main(String[] args) {
 
         ArrayList<Month> months = new ArrayList<>();
 
-        months.add(new Month("January"));
-        months.add(new Month("February"));
-        months.add(new Month("March"));
-        months.add(new Month("April"));
-        months.add(new Month("May"));
-        months.add(new Month("June"));
-        months.add(new Month("July"));
-        months.add(new Month("September"));
-        months.add(new Month("October"));
-        months.add(new Month("November"));
-        months.add(new Month("December"));
+        MonthManagement.addMonth(months);
+        Month august = new Month ("August");
+        MonthManagement.addMissingMonths(months, 7, august);
 
-        months.add(7, new Month("August"));
-
-        for (Month m : months) {
+       for (Month m : months) {
             System.out.println(m);
         }
 
-        HashSet<Month> uniqueMonths = new HashSet<>(months);
-
-        System.out.println("Size before: " + uniqueMonths.size());
-
-        boolean inserted = uniqueMonths.add(new Month("January"));
-
-        System.out.println("Duplicate add returned:" + inserted);
-
-        System.out.println("Size after: " + uniqueMonths.size());
-
-        for (Month m : uniqueMonths) {
-            System.out.println(m);
-        }
-
-        Iterator<Month> it = uniqueMonths.iterator();
-        while (it.hasNext()) {
-            Month m = it.next();
-            System.out.println(m);
-        }
+        System.out.println("\nMonth list before: " + months + "\n");
+        System.out.print("Duplicate add returned:" + MonthManagement.monthDeduplicator(months) + "\n");
+        System.out.println("Month list after: " + months + "\n");
+        System.out.println("Iterator List: " + MonthManagement.printIterator(months));
     }
 }
